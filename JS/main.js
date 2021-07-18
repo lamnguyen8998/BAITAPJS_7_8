@@ -103,7 +103,7 @@ function timSoNguyenTo() {
             return;
         }
     }
-    document.getElementById("timSoNguyenTo").innerHTML = "Không tồn tại số nguyên tố trong mảng";
+    document.getElementById("timSoNguyenTo").innerHTML = "không có số nguyên tố";
 }
 
 function laSoNguyenTo(n) {
@@ -116,4 +116,46 @@ function laSoNguyenTo(n) {
         }   
     }
     return true;
+}
+
+
+
+function btndemSoNguyen() {
+    var count = 0;
+    for(var i = 0; i < arr.length; ++i){
+        if(Number.isInteger(arr[i]))
+            count++;
+    }
+    console.log(count);
+    document.getElementById("demSoNguyen").innerHTML = ` Có tất cả :${count} số n nguyên` ;
+
+}
+
+
+function btnSoSanh() {
+    var countDuong = 0;
+    var countAm = 0;
+    
+    for(var i = 0; i < arr.length; ++i){
+        if(arr[i] > 0)
+            countDuong++;
+    }
+    for(var i = 0; i < arr.length; ++i){
+        if(arr[i] < 0)
+            countAm++;
+    }
+    console.log(countDuong);
+    console.log(countAm);
+
+    if(countDuong > countAm){
+        document.getElementById("soSanhAmDuong").innerHTML = " Số dương nhiều hơn số âm"
+    }
+    if(countDuong < countAm){
+        document.getElementById("soSanhAmDuong").innerHTML = " Số âm nhiều hơn số dương"
+    }
+    if (countDuong = countAm){
+        document.getElementById("soSanhAmDuong").innerHTML = " Dương và âm bằng nhau"
+    }
+
+ 
 }
